@@ -1,0 +1,143 @@
+<main id="main">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center h-50 reg-con-row">
+      <div class="col">
+
+        <div class="card card-registration mt-lg-4 my-4 align-items-center">
+
+          <div class="row g-0 reg-con-row-2">
+            <div class="col-xl-4 d-none d-xl-block reg-block">
+              <img src="assets/images/register.png" class="img-fluid" />
+            </div>
+            <div class="col-xl-8">
+              <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+                <div class="card-body reg-card-body p-md-2">
+                  <h3 class="mb-4 mt-4 text-center">Sign Up</h3>
+                  <div class="row card-reg-contain">
+                    <div class="col-md-6">
+                      <label class="form-label" for="firstName">First Name</label>
+                      <input type="text" id="firstName" formControlName="firstName"
+                        class="form-control form-control-lg input_field" placeholder="Enter the first name" />
+                      <small class="text-danger"
+                        *ngIf="(registerFormControl.firstName.touched || registerFormSubmitted) && registerFormControl.firstName.errors?.required">
+                        FirstName is required
+                      </small>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label" for="lastName">Last Name</label>
+                      <input type="text" id="lastName" formControlName="lastName"
+                        class="form-control form-control-lg input_field" placeholder="Enter the last name" />
+                      <small class="text-danger"
+                        *ngIf="(registerFormControl.lastName.touched || registerFormSubmitted) && registerFormControl.lastName.errors?.required">
+                        LastName is required
+                      </small>
+                    </div>
+
+                  </div>
+
+                  <div class="row card-reg-contain">
+                    <div class="col-md-6">
+                      <label class="form-label" for="email">User Name (Email id)</label>
+                      <input type="text" id="email" formControlName="email"
+                        class="form-control form-control-lg input_field" placeholder="Enter the username (Email id)" />
+                      <small class="text-danger"
+                        *ngIf="(registerFormControl.email.touched || registerFormSubmitted) && registerFormControl.email.errors?.required">
+                        E-mail is required
+                      </small>
+                      <small class="text-danger"
+                        *ngIf="(registerFormControl.email.touched || registerFormSubmitted) && registerFormControl.email.errors?.email">
+                        Enter a valid email address
+                      </small>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="mobile">Mobile</label>
+                      <input type="text" id="mobile" formControlName="mobile"
+                        class="form-control form-control-lg input_field" placeholder="Enter the mobile number" />
+                      <small class="text-danger"
+                        *ngIf="(registerFormControl.mobile.touched || registerFormSubmitted) && registerFormControl.mobile.errors?.required">
+                        Mobile is required
+                      </small>
+                    </div>
+                  </div>
+
+                  <div class="row card-reg-contain">
+                    <div class="col-md-6">
+                      <label class="form-label" for="companyName">Company Name</label>
+                      <input type="text" id="companyName" formControlName="companyName"
+                        class="form-control form-control-lg input_field" placeholder="Enter the company name" />
+                      <small class="text-danger"
+                        *ngIf="(registerFormControl.companyName.touched || registerFormSubmitted) && registerFormControl.companyName.errors?.required">
+                        Company Name is required
+                      </small>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="agentLicenceNo">Agent License Number</label>
+                      <input type="text" id="agentLicenceNo" formControlName="agentLicenceNo"
+                        class="form-control form-control-lg input_field" placeholder=" XX - 00000 - XX" />
+                      <small class="text-danger"
+                        *ngIf="(registerFormControl.agentLicenceNo.touched || registerFormSubmitted) && registerFormControl.agentLicenceNo.errors?.required">
+                        Agent License Number is required
+                      </small>
+                    </div>
+                  </div>
+
+                  <!-- <div class="form-outline card-reg-contain">
+                    <label class="form-label" for="agentLicenceNo">Agent License Number</label>
+                    <input type="text" id="agentLicenceNo" formControlName="agentLicenceNo" class="form-control form-control-lg input_field-large" placeholder=" XX - 00000 - XX" />
+                    <small class="text-danger"
+                      *ngIf="(registerFormControl.agentLicenceNo.touched || registerFormSubmitted) && registerFormControl.agentLicenceNo.errors?.required">
+                      Agent License Number is required
+                    </small> 
+                  </div> -->
+
+                  <div class="row card-reg-contain">
+                    <div class="col-md-6">
+                      <label class="form-label" for="password">Password</label>
+                      <input type="password" id="password" formControlName="password"
+                        class="form-control form-control-lg input_field" placeholder="Enter password" />
+                      <small class="text-danger"
+                        *ngIf="(registerFormControl.password.touched || registerFormSubmitted) && registerFormControl.password.errors?.required">
+                        Password is required
+                      </small>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label" for="PasswordConfirmation">Confirm Password</label>
+                      <input type="password" id="PasswordConfirmation" formControlName="passwordConfirmation"
+                        class="form-control form-control-lg input_field" placeholder="Re-enter password" />
+                      <small class="text-danger"
+                        *ngIf="(registerFormControl.passwordConfirmation.touched || registerFormSubmitted) && registerFormControl.passwordConfirmation.errors?.required">
+                        Confirmation Password is required
+                      </small>
+                    </div>
+                  </div>
+
+
+
+
+                  <div class="d-grid gap-1 align-items-center">
+                    <button class="reg-btn text-center" type="submit">Create Account</button>
+                  </div>
+
+                  <div class="form-check text-center">
+
+                    <label class="form-check-label" for="flexCheckDefault">
+                      <input class="form-check-input reg-chk me-2" type="checkbox" value="" id="flexCheckDefault">
+                      I agree to platforms <span style="color:#024EFF;">Terms & Services</span> and <span
+                        style="color: #024EFF;">Privacy Policy</span>
+                    </label>
+                  </div>
+
+                  <div class="tab-pane fade show active text-center forgot" id="tab1">
+                    <span><a routerLink="/login" class="text-bold">Log in</a> <a href="#"></a></span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

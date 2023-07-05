@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <form [formGroup]="templateForm" (ngSubmit)="submitForm()">
+                    <div class="col-sm-6 ms-4 me-4 mt-4 mb-1">
+                        <div class="mb-3 d-flex"> 
+                            <label for="roleNameInEn" class="form-label email-label">Role Name</label>
+                            <input formControlName="roleNameInEn" type="text" id="roleNameInEn" class="form-control">
+                        </div>
+                        <small class="text-danger"
+                            *ngIf="(templateFormControl.roleNameInEn.touched || templateFormSubmitted) && templateFormControl.roleNameInEn.errors?.required">
+                            RoleName  is required
+                        </small>
+
+                        <div class="mb-3 d-flex">
+                            <label for="isActive" class="form-label purpose-label">Active</label>
+                            <input formControlName="isActive" type="text" id="isActive" class="form-control">
+                        </div>
+                        <small class="text-danger"
+                            *ngIf="(templateFormControl.isActive.touched || templateFormSubmitted) && templateFormControl.isActive.errors?.required">
+                            Active is required
+                        </small>
+
+                    </div><!-- end col-->
+
+                  
+                <!-- <div class="ms-4 me-4">
+                    <quill-editor formControlName="TextEn" [styles]="editorStyle" [modules]="config"
+                    class="content-editor" [placeholder]="'Enter email template'">   
+                    </quill-editor>
+                    <small class="text-danger"
+                        *ngIf="(templateFormControl.TextEn.touched || templateFormSubmitted) && templateFormControl.TextEn.errors?.required">
+                        Template content is required
+                    </small>
+                </div> -->
+
+                    <div class="col-md-12 text-center mt-2 mb-2">
+                        <button type="submit" class="btn btn-primary"><i class="mdi mdi-content-save text-white"></i>
+                            Save</button>
+                    </div>
+                </form>
+                <div class="clearfix"></div>
+                <div class="m-2 text-start">
+                    <a routerLink="/roles" class="btn btn-primary" type="button"><i
+                            class=" uil uil-left-arrow-from-left text-white"></i> Back</a>
+                </div>
+            </div> <!-- end card-->
+        </div> <!-- end col -->
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,57 @@
+<div class="container-fluid">
+               
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body card-email-list">
+
+                    <div class="table-responsive">
+                        <div class="dt-export">
+                            <a routerLink="/mail-template/add" class="btn btn-primary me-2" title="Create Email Template" data-bs-toggle="tooltip" style="border-radius: 8px;">
+                                <i class="mdi mdi-email-plus"></i>
+                            </a>
+                            <button type="button"  class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:0.8rem; background-color: #fff; border: 1px solid #d9d9d9; border-radius: 8px;"><i class="bi bi-box-arrow-up text-primary"></i> Export</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-header" href="#"><h5>Export Options</h5></a>
+                                <a class="dropdown-item" role="button" (click)="exportPdf()">Export as .pdf</a>
+                                <a class="dropdown-item" role="button" (click)="exportFile('csv')">Export as .csv</a>
+                                <a class="dropdown-item" role="button" (click)="exportFile('xlsx')">Export as .xlxs</a>
+                            </div>
+                        </div>
+                        <table class="table table-centered text-center w-100 dt-responsive nowrap" id="et-dt" datatable [dtOptions]="dtOptions">
+                            <thead class="table">
+                                <tr style="background-color:#EDF2FE;">
+                                    <th>T-Id</th>
+                                    <th>Date</th>
+                                    <th>Slug</th>
+                                    <th>Subject</th>
+                                    <th style="width: 85px;">Operations</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                            <!-- <tbody *ngIf="templateList?.length != 0">
+                                <tr *ngFor="let eTemplate of templateList">
+                                  <td>{{ eTemplate.TemplatId }}</td>
+                                  <td>{{ eTemplate.UpdatedAt | date:'short' }}</td>
+                                  <td>{{ eTemplate.Slug }}</td>
+                                  <td>{{ eTemplate.SubjectEn }}</td>
+                                  <td class="table-action">                            
+                                    <a href="javascript: void(0);" class="action-icon" data-bs-toggle="tooltip" title="View"> <i class="mdi mdi-eye mp-eye"></i></a>
+                                    <a href="javascript: void(0);" class="action-icon" data-bs-toggle="tooltip" title="Edit"><i class="mdi mdi-pencil mp-pencil"></i></a>
+                                    <a href="javascript: void(0);" class="action-icon" data-bs-toggle="tooltip" title="Delete"><i class="mdi mdi-delete mp-pencil"></i></a>
+                                  </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="templateList?.length == 0">
+                                <tr>
+                                  <td colspan="5" class="no-data-available">No data found!</td>
+                                </tr>
+                              </tbody> -->
+                        </table>
+                    </div>
+                </div> <!-- end card-body-->
+            </div> <!-- end card-->
+        </div> <!-- end col -->
+    </div>                                                                 
+</div>

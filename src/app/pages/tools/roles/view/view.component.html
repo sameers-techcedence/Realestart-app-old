@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xxl-12 col-xl-12">
+            <!-- project card -->
+            <div class="card d-block">
+                <div class="card-body">
+                    <h4 class="mt-2">App Error Log Details</h4>
+                    <div class="row">
+                        <div class="col d-flex">
+                            <div class="col-4 col-sm-4 pe-2">
+                                 <div>
+                                    <p class="mt-2 mb-1 ps-1 fw-semibold">RoleNameinEn :</p>
+                                </div>
+                                <div>
+                                    <p class="mt-2 mb-1 ps-1 fw-semibold">Active :</p>
+                                </div>
+                                <div>
+                                    <p class="mt-2 mb-1 ps-1 fw-semibold">Created Date :</p>
+                                </div>
+                                <div>
+                                    <p class="mt-2 mb-1 ps-1 fw-semibold">Updated Date :</p>
+                                </div>
+                                <div>
+                                    <p class="mt-2 mb-1 ps-1 fw-semibold">RoleId :</p>
+                                </div>
+                               
+                            </div> <!-- end col -->
+
+                            <div class="col-8 col-sm-8 ps-2">
+                                
+                                 <div>
+                                    <p class="mt-2 mb-1">{{viewData.RoleNameInEn}}</p>
+                                </div>
+                                <div>
+                                    <p class="mt-2 mb-1">{{viewData.IsActive}}</p>
+                                </div>
+                                <div>
+                                    <p class="mt-2 mb-1">{{viewData.createdAt | date}}</p>
+                                </div>
+                                <div>
+                                    <p class="mt-2 mb-1">{{viewData.updatedAt | date}}</p> 
+                                </div>
+                                <div>
+                                    <p class="mt-2 mb-1">{{viewData.RoleID}}</p>
+                                </div>
+                                <div>
+                                    <div class="mt-2 mb-1" [innerHTML]="viewData.TextEn"></div>                                                
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="m-2 text-start">
+                            <a routerLink="/roles" class="btn btn-primary" type="button"><i
+                                    class=" uil uil-left-arrow-from-left text-white"></i> Back</a>
+                        </div>
+                    </div> <!-- end row -->
+                </div>
+            </div>
+        </div>
+    </div>

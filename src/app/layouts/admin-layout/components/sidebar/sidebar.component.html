@@ -1,0 +1,144 @@
+<div class="leftside-menu" style>
+
+    <!-- LOGO -->
+    <a routerLink="dashboard" class="logo text-center logo-light">
+        <span class="logo-lg">
+            <img src="assets/images/logoapp.png" alt="" height="36">
+        </span>
+        <span class="logo-sm">
+            <img src="assets/images/logo_sm.png" alt="" height="36">
+        </span>
+    </a>
+
+    <div class="h-100" id="leftside-menu-container" data-simplebar="">
+
+        <!--- Sidemenu -->
+        <!-- <ul class="side-nav">
+            
+            <li class="side-nav-item">
+                <a href="admin-manage-property.html" class="side-nav-link">
+                    <i class="bi bi-gear-fill"></i>
+                    <span> Manage Properties </span>
+                </a>
+            </li>
+
+            <li class="side-nav-item">
+                <a href="admin-manage-contract-review.html" class="side-nav-link">
+                    <i class="bi bi-postcard-fill"></i>
+                    <span class="text-center"> Manage Contract</span><br><span style="margin-left:2.125rem;">Review</span>                            
+                </a>
+            </li>
+
+
+            <li class="side-nav-item">
+                <a routerLink="dashboard" class="side-nav-link">
+                    <i class="bi bi-clipboard-data-fill"></i>
+                    <span> Manage Master Data </span>
+                </a>
+            </li>
+            
+            <li class="side-nav-item">
+                <a href="admin-email-template-listing.html" class="side-nav-link">
+                    <i class="bi bi-envelope-paper-fill"></i>
+                    <span> Email Template </span>
+                </a>
+            </li>       
+        </ul> -->
+
+
+         <!--- Sidemenu -->
+         <ul class="side-nav">
+           
+            <li class="side-nav-item" routerLinkActive="menuitem-active" [routerLinkActiveOptions]="{exact: true}">
+                <a routerLink="/dashboard" class="side-nav-link">
+                    <i class="mdi mdi-view-dashboard-variant"></i>
+                    <span> Dashboard </span>
+                </a>
+            </li>
+
+            <li class="side-nav-item" routerLinkActive="menuitem-active" [routerLinkActiveOptions]="{exact: false}">
+                <a data-bs-toggle="collapse" href="#master" aria-expanded="false" aria-controls="master" class="side-nav-link">
+                    <i class="bi bi-person-workspace"></i>
+                    <span> Master </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="master" routerLinkActive="show" [routerLinkActiveOptions]="{exact: false}">
+                    <ul class="side-nav-second-level">
+                        <li routerLinkActive="menuitem-active" [routerLinkActiveOptions]="{exact: false}">
+                            <a routerLink="/mail-template" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}"> Email Template</a>
+                        </li>
+                        <li>
+                            <a href="#">Manage Master Data</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#transaction" aria-expanded="false" aria-controls="transaction" class="side-nav-link">
+                    <i class="uil-exchange"></i>
+                    <span> Transaction </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="transaction">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="admin-manage-property.html">Manage Properties</a>
+                        </li>
+                        <li>
+                            <a href="admin-manage-contract-review.html">Manage Contracts</a>
+                        </li>
+                        <li>
+                            <a href="admin-email-template-listing.html">Email Templates</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            
+            <li class="side-nav-item" routerLinkActive="menuitem-active" [routerLinkActiveOptions]="{exact: false}">
+                <a data-bs-toggle="collapse" href="#tools" aria-expanded="false" aria-controls="tools" class="side-nav-link">
+                    <i class="mdi mdi-tools"></i>
+                    <span> Tools </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="tools"  routerLinkActive="show" [routerLinkActiveOptions]="{exact: false}">
+                    <ul class="side-nav-second-level">
+                        <li routerLinkActive="menuitem-active" [routerLinkActiveOptions]="{exact: false}">
+                            <a  routerLink="/roles" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}" >Roles</a>
+                        </li>
+                        <li>
+                            <a href="#">User</a>
+                        </li>
+                        <li>
+                            <a href="#">Role Rights</a>
+                        </li>
+                        <li>
+                            <a href="#">Change Password</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#report" aria-expanded="false" aria-controls="report" class="side-nav-link">
+                    <i class="mdi mdi-file-table-box"></i>
+                    <span> Report </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="report">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="#">Test Report</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            </ul>
+
+        <div class="clearfix"></div>
+
+    </div>
+    <!-- Sidebar -left -->
+
+</div>

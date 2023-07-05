@@ -1,0 +1,59 @@
+<div class="container login-container">
+    <!-- Feature Tabs -->
+    <div class="row feture-tabs login-tab">
+      
+        <div class="col-lg-6 img-side">
+          <img src="assets/images/login-image.png" class="img-fluid" alt="">
+        </div>
+      
+      <div class="col-lg-6">
+        <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+        <!-- Tab Content -->
+      
+        <div class="tab-content login-tab-content">
+          <h3>Sign in to your account</h3>     
+          
+            <label class="form-label d-block" for="email">Login with E-mail</label>
+            <div class="input-group">
+              <input type="text" class="form-control input_field" placeholder="Enter your email here" formControlName="email">
+            </div>
+            <small class="text-danger"
+              *ngIf="(loginFormControl.email.touched || loginFormSubmitted) && loginFormControl.email.errors?.required">
+              E-mail is required
+            </small>
+            <small class="text-danger"
+              *ngIf="(loginFormControl.email.touched || loginFormSubmitted) && loginFormControl.email.errors?.email">
+              Enter a valid email address
+            </small>
+  
+            <label class="form-label d-block" for="password">Password</label>
+            <div class="input-group">
+              <input type="password" class="form-control input_field-icon" placeholder="Enter the password here" formControlName="password">
+              <span class="input-group-text"><i class="bi bi-eye-fill"></i></span>
+            </div>
+            <small class="text-danger"
+              *ngIf="(loginFormControl.password.touched || loginFormSubmitted) && loginFormControl.password.errors?.required">
+              Password is required
+            </small>
+  
+            <div class="d-grid gap-1">
+              <button class="login-btn" type="submit">Login</button>
+            </div>
+  
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    I agree to platforms <span style="color:#024EFF;">Terms & Services</span> and <span style="color: #024EFF;">Privacy Policy</span>
+                </label>
+            </div>
+
+            <div class="tab-pane fade show active forgot" id="tab1">
+              <span><a role="button" (click)="openModal()">Forgot Login or Password?</a> <a routerLink="/register">Sign up</a></span>
+            </div><!-- End Tab 1 Content -->
+          
+        </div>
+       </form>
+      </div>
+  
+    </div><!-- End Feature Tabs -->
+</div>
